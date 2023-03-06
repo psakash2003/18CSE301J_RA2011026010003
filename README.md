@@ -5,6 +5,6 @@ Akash PS
 
 Tabelau Project
 
-Visualized Data on Swiggy Analysis using Tabelau
+Visualized Data on Car Insurance Analysis using Tabelau
 
 Tabelau Link - https://public.tableau.com/app/profile/akash.ps/viz/CarInsuranceUIAkashPS/Dash
