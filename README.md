@@ -7,4 +7,4 @@ Tabelau Project
 
 Visualized Data on Swiggy Analysis using Tabelau
 
-Tabelau Link - https://public.tableau.com/app/profile/akash.ps/viz/SwiggyAnalysisTest/Dashboard1
+Tabelau Link - https://public.tableau.com/app/profile/akash.ps/viz/CarInsuranceUIAkashPS/Dash
