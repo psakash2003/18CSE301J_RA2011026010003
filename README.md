@@ -19,10 +19,3 @@
   </div>
   </div>
 
-  <div class="row">
-    <div class="col-12 text-center mt-5">
-        <h4>Assignment 1</h4>
-        <h4>Global Poverty Statistics</h4>
-        <iframe class="mt-5" src="https://drive.google.com/file/d/1b5wGoN0gXkk2zMfoq8RPR23t6NW1SsBs/view?usp=sharing" width="640" height="480" allow="autoplay"></iframe>
-    </div>
-  </div>
