@@ -65,7 +65,7 @@
         .attr("transform",
               "translate(" + margin.left + "," + margin.top + ")");
     
-    d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/2_TwoNum.csv",
+    d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/3_TwoNumOrdered.csv",
     
       function(d){
         return { date : d3.timeParse("%Y-%m-%d")(d.date), value : d.value }
