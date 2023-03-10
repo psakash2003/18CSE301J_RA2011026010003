@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title align = 'center'>Population Chart</title>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <h1 align = 'center'>D3 Graph</h1>
+  <h2>
+    This Graph Represents Cummulative Population of Various States of India.
+  </h2>
+</head>
+<body>
+  <svg id="chart"></svg>
+  <script>
+const width = 1900;
+const height = 800;
+
+const svg = d3.select('body')
+  .append('svg')
+  .attr('width', width)
+  .attr('height', height);
+
+// Defining the data : 
+const data = [  
+  { state: 'Andhra Pradesh', population: [50293439, 51500352, 52883163, 54297547, 55740523, 57214526, 58720582, 60258668, 61829405, 63429217] },
+  { state: 'Arunachal Pradesh', population: [1097968, 1118582, 1139783, 1161685, 1184383, 1208122, 1232683, 1258516, 1285459, 1312627] },
+  { state: 'Assam', population: [31205576, 31834443, 32478701, 33138266, 33812992, 34502855, 35207770, 35927774, 36662952, 37413818] },
+  { state: 'Bihar', population: [82998509, 84919171, 86900093, 88938796, 91033271, 93180863, 95379827, 97630253, 99934098, 102288706] },
+  { state: 'Chhattisgarh', population: [20833803, 21346763, 21870824, 22406130, 22953130, 23512260, 24083791, 24667745, 25263922, 25872150] },
+  { state: 'Goa', population: [1457723, 1480888, 1504986, 1530022, 1555992, 1582900, 1610749, 1639550, 1669311, 1700045] },
+  { state: 'Gujarat', population: [60383628, 61550383, 62734239, 63935726, 65155485, 66394302, 67652904, 68932020, 70232468, 71555068] },
+  { state: 'Haryana', population: [25353081, 25918247, 26504098, 27111218, 27740181, 28391447, 29065582, 29763152, 30484724, 31230715] },
+  { state: 'Himachal Pradesh', population: [6856509, 6966013, 7078650, 7194473, 7313547, 7435931, 7561654, 7690764, 7823293, 7959285] },
+  { state: 'Jharkhand', population: [32966238, 33607348, 34263969, 34936274, 35624404, 36328541, 37048898, 37785543,3444465,45556565]},
+  //{ state: 'Jhard', population: [32966238, 33607348, 34263969, 34936274, 35624404, 36328541, 37048898, 37785543,3444465,45556565] },
+];
+
+
+//const xScale = d3.scaleBand()
+  //.domain(d3.range(data[0].population.length))
+  //.range([50, width - 50]);
+  const xScale = d3.scaleBand()
+  .domain(data[0].population.map((d, i) => i))
+  .range([50, width - 50])
+  .padding(0.2);
+  
+const xAxis = d3.axisBottom(xScale).ticks(36);
+
+
+svg.append('g')
+  .attr('transform', `translate(0, ${height - 50})`)
+  .call(xAxis);
+
+const yScale = d3.scaleLinear()
+  .domain([0, d3.max(data, d => d3.max(d.population))])
+  .range([height - 50, 50]);
+
+
+svg.selectAll('rect')
+  .data(data)
+  .enter()
+  .append('rect')
+  .attr('x', (d, i) => xScale(i))
+  .attr('y', d => yScale(d3.max(d.population) - d.population[0]))
+  .attr('width', xScale.bandwidth())
+  .attr('height', d => height - 50 - yScale(d3.max(d.population) - d.population[0]))
+  .attr('fill', 'Green');
+
+
+svg.append('g')
+  .attr('transform', `translate(0, ${height - 50})`)
+  .call(d3.axisBottom(xScale));
+var y = d3.scaleLinear()
+  .domain([0, d3.max(data, function(d) { return d.value; })])
+  .range([height, 0]);
+
+var yAxis = d3.axisLeft(y)
+  .ticks(10) 
+  .tickFormat(d3.format(".2s")); 
+
+svg.append("g")
+  .attr("class", "y-axis")
+  .call(yAxis);
+svg.append('g')
+  .attr('transform', 'translate(50, 0)')
+  .call(d3.axisLeft(yScale));
+</script>
+<p>The excel data about the Population of India</p>
+<br>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRF2dhdr3xyDzdHTG3XTKYrJxLfpCUKTb0OYxOID0iHFi4-2OLYgiDghTVK8_XkTxqRfNL8mfyPz0Sz/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+</body>
+</html> 
