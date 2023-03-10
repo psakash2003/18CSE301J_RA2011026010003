@@ -63,16 +63,74 @@
     </div>
   </div>
   
-   <div class="col-12 text-center mt-5">
-      <h3>ASSIGNMENT  3</h3>
-      <div>
-        <h3>INFORMATION VISUALIZATION USING D3.JS</h3>
-        <svg id='canvas'>
-          <text id='title' x='350' y='30'>USA GDP</text>
-        </svg>
-      </div>
-   <div class="row">
-      <div class="col-12 text-center mt-5 align-items-center">
+     <div class="row">
+    <div class="col-12 text-center mt-5 align-items-center">
+        <h3>ASSIGNMENT 3</h3>
+        <h3>D3 Graph</h3>
+    </div>
+    <div class="col-12 text-center align-items-center justify-content-center">
+        <div id="my_dataviz"></div>
+        
+    </div>
+    </div>
+  </div>
+  <div style="display: flex;">
+  <svg width="800" height="600" style="margin:auto"></svg>
+  </div>
+  <script>
+    var svg = d3.select("svg"),
+        margin = 200,
+        width = svg.attr("width") - margin,
+        height = svg.attr("height") - margin;
+
+
+    var xScale = d3.scaleBand().range ([0, width]).padding(0.4),
+        yScale = d3.scaleLinear().range ([height, 0]);
+
+    var g = svg.append("g")
+               .attr("transform", "translate(" + 100 + "," + 100 + ")");
+
+    d3.csv("Kerala.csv", function(error, data) {
+        if (error) {
+            throw error;
+        }
+
+        xScale.domain(data.map(function(d) { return d.Month; }));
+        yScale.domain([100, d3.max(data, function(d) { return d.CPI; })]);
+
+        g.append("g")
+         .attr("transform", "translate(0," + height + ")")
+         .call(d3.axisBottom(xScale))
+         .append("text")
+         .attr("y", height - 250)
+         .attr("x", width - 100)
+         .attr("text-anchor", "end")
+         .attr("stroke", "black")
+         .text("Month");
+
+        g.append("g")
+         .call(d3.axisLeft(yScale).tickFormat(function(d){
+             return d;
+         }).ticks(10))
+         .append("text")
+         .attr("y", 6)
+         .attr("dy", "-5.1em")
+         .attr("text-anchor", "end")
+         .attr("stroke", "black")
+         .text("CPI");
+
+         g.selectAll(".bar")
+         .data(data)
+         .enter().append("rect")
+         .attr("class", "bar")
+         .attr("x", function(d) { return xScale(d.Month); })
+         .attr("y", function(d) { return yScale(d.CPI); })
+         .attr("width", xScale.bandwidth())
+         .attr("height", function(d) { return height - yScale(d.CPI); });
+});
+  
+  </script>
+  
           <h3>ASSIGNMENT  4</h3>
           <h3>PLOTLY PYTHON</h3>
       </div>
