@@ -24,7 +24,7 @@ const data = [
     .padding(0.1)
   
   const y = d3.scaleLinear()
-    .domain([0, 14])
+    .domain([0, 15])
     .range([height - margin.bottom, margin.top])
   
   svg
