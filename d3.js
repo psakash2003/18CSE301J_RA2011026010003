@@ -9,7 +9,7 @@ const data = [
   ];
   
   const width = 900;
-  const height = 900;
+  const height = 500;
   const margin = { top: 50, bottom: 50, left: 50, right: 50 };
   
   const svg = d3.select('#d3-container')
@@ -24,7 +24,7 @@ const data = [
     .padding(0.01)
   
   const y = d3.scaleLinear()
-    .domain([0, 20])
+    .domain([0, 15])
     .range([height - margin.bottom, margin.top])
   
   svg
