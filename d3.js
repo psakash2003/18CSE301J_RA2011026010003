@@ -7,6 +7,21 @@ const data = [
   { stateName: 'Delhi', useCount: 33 },
   { stateName: 'Goa', useCount: 20 },
   { stateName: 'Gujarat', useCount: 31 },
+  { stateName: 'Himachal Pradesh', useCount: 22 },
+  { stateName: 'Jammu and Kashmir', useCount: 11 },
+  { stateName: 'Jharkhand', useCount: 30 },
+  { stateName: 'Karnataka', useCount: 36 },
+  { stateName: 'Kerala', useCount: 42 },
+  { stateName: 'Madhya Pradesh', useCount: 21 },
+  { stateName: 'Maharashtra', useCount: 21 },
+  { stateName: 'Odisha', useCount: 17 },
+  { stateName: 'Punjab', useCount: 47 },
+  { stateName: 'Rajasthan', useCount: 44 },
+  { stateName: 'Telangana', useCount: 28 },
+  { stateName: 'Uttar Pradesh', useCount: 43 },
+  { stateName: 'Uttarakhand', useCount: 45 },
+  { stateName: 'West Bengal', useCount: 39 },
+  { stateName: 'Tamil Nadu', useCount: 62 },
 ];
 
 const width = 900;
@@ -25,7 +40,7 @@ const x = d3.scaleBand()
   .padding(0.1)
 
 const y = d3.scaleLinear()
-  .domain([0, 57])
+  .domain([0, 62]) // updated to reflect the maximum useCount value
   .range([height - margin.bottom, margin.top])
 
 svg
@@ -46,7 +61,7 @@ svg.append("text")
   .attr("text-anchor", "middle")
   .attr("fill","white")
   .attr("font-size", 20)
-  .attr("transform", "translate(" + (width / 2) + "," + (height + margin.bottom - 52) + ")")
+  .attr("transform", "translate(" + (width / 2) + "," + (height + margin.bottom - 52) + ")
   .text("STATES");
 
 svg.append("text")
