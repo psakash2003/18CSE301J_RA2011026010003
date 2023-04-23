@@ -1,11 +1,11 @@
 const data = [
-    { stateName: 'Andhra Pradesh', useCount: 11 },
-    { stateName: 'Assam', useCount: 4 },
-    { stateName: 'Bihar', useCount: 2 },
-    { stateName: 'Chandigarh', useCount: 5 },
-    { stateName: 'Chattisgarh', useCount: 10 },
-    { stateName: 'Delhi', useCount: 3 },
-    { stateName: 'Goa', useCount: 7 },
+    { stateName: 'Andhra Pradesh', useCount: 57 },
+    { stateName: 'Assam', useCount: 50 },
+    { stateName: 'Bihar', useCount: 24 },
+    { stateName: 'Chandigarh', useCount: 36 },
+    { stateName: 'Chattisgarh', useCount: 34 },
+    { stateName: 'Delhi', useCount: 33 },
+    { stateName: 'Goa', useCount: 20 },
   ];
   
   const width = 900;
