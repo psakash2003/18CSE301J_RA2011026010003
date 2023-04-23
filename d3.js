@@ -6,6 +6,7 @@ const data = [
     { stateName: 'Chattisgarh', useCount: 34 },
     { stateName: 'Delhi', useCount: 33 },
     { stateName: 'Goa', useCount: 20 },
+    { stateName: 'Gujarat', useCount: 31 },
   ];
   
   const width = 900;
