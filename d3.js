@@ -53,7 +53,7 @@ const data = [
 .attr("font-size", 20)
   .attr("text-anchor", "middle")
   .attr("transform", "rotate(-90) translate(" + (-height/2) + "," + (-margin.left + 20) + ")")
-  .text("AVERAGEUSAGE");
+  .text("AVERAGE USAGE");
   function yAxis(g) {
     g.attr("transform", `translate(${margin.left}, 0)`)
       .call(d3.axisLeft(y).ticks(null, data.format))
