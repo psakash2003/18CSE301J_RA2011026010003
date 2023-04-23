@@ -7,8 +7,8 @@ const data = [
   { stateName: 'Delhi', useCount: 33 },
   { stateName: 'Goa', useCount: 20 },
   { stateName: 'Gujarat', useCount: 31 },
-  { stateName: 'Mumbai', useCount: 42 },
-  { stateName: 'Kolkata', useCount: 38 }
+  { stateName: 'Maharashtra', useCount: 21 },
+  { stateName: 'West Bengal', useCount: 39 }
 ];
 
 const width = 900;
